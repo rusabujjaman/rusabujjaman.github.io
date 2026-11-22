@@ -21,9 +21,9 @@
    COLOUR and TYPE: deep river teal fields, Kremlin brick red, one warm sun accent; Sora + Inter.
    LAYOUT: full-bleed hero with name over panorama, route strip, CV sections, posts feed, video grid, contact. */
 :root{color-scheme:light dark;
---bg:light-dark(#ffffff,#081c20);--ink:light-dark(#10262c,#e8f1f0);--soft:light-dark(#4b6267,#9db5b6);
---card:light-dark(#f2f7f6,#0f2a30);--line:light-dark(#d5e3e1,#1d3e45);
---teal:#0e4a52;--deep:#082f35;--brick:light-dark(#b8402a,#ef7a5f);--sun:#ffb547}
+--bg:light-dark(#ffffff,#081220);--ink:light-dark(#101c2c,#e8ecf1);--soft:light-dark(#4b5767,#9da7b6);
+--card:light-dark(#f2f4f7,#0f1d30);--line:light-dark(#d5dbe3,#1d2e45);
+--teal:#0e2a52;--deep:#081b35;--brick:light-dark(#b8402a,#ef7a5f);--sun:#ffb547}
 :root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
 *{box-sizing:border-box;min-width:0}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;overflow-x:clip}
@@ -44,7 +44,7 @@ nav a:hover,nav a:focus-visible{background:#ffffff1f;opacity:1}
 .hero{background:var(--teal);color:#fff;position:relative}
 .hero .top{padding:clamp(36px,6vw,84px) max(5vw,16px) 0}
 .hero h1{font-size:clamp(44px,8vw,96px);font-weight:800;letter-spacing:-.02em}
-.hero p{font-size:clamp(17px,1.6vw,20px);max-width:58ch;color:#d6ecea;margin:18px 0 0}
+.hero p{font-size:clamp(17px,1.6vw,20px);max-width:58ch;color:#d6dfec;margin:18px 0 0}
 .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 20px;border-radius:999px;border:0;font:600 15px Inter,sans-serif;cursor:pointer;text-decoration:none}
 .btn.sun{background:var(--sun);color:#1d1606}
@@ -53,7 +53,7 @@ nav a:hover,nav a:focus-visible{background:#ffffff1f;opacity:1}
 .btn.line{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)}
 .btn:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
 .pano{display:block;width:100%;height:clamp(220px,32vw,400px);margin-top:-10px}
-.route{background:var(--deep);color:#cfe3e1;padding:18px max(5vw,16px)}
+.route{background:var(--deep);color:#cfd7e3;padding:18px max(5vw,16px)}
 .route ol{list-style:none;margin:0 auto;padding:0;max-width:1240px;display:flex;flex-wrap:wrap;gap:8px 0;align-items:center}
 .route li{display:flex;align-items:center;font-size:15px}
 .route li b{color:#fff;font-weight:600}
@@ -98,11 +98,11 @@ input[type=file]{font-size:15px;max-width:100%}
 .owner .tools{display:flex}
 .tools button{min-height:40px;font-size:14px}
 .empty{padding:34px;text-align:center;border:2px dashed var(--line);border-radius:20px;color:var(--soft)}
-footer{background:var(--deep);color:#d6ecea}
+footer{background:var(--deep);color:#d6dfec}
 footer h2{color:#fff}
 .mail{font-size:clamp(20px,3vw,30px);font-family:Sora;color:var(--sun);overflow-wrap:anywhere}
 .small{font-size:13px;color:var(--soft)}
-footer .small{color:#9fbdbb}
+footer .small{color:#9facbd}
 dialog{border:0;border-radius:20px;background:var(--bg);color:var(--ink);padding:24px;max-width:min(560px,92vw);width:100%}
 dialog::backdrop{background:#0009}
 .avwrap{position:relative;display:inline-block;margin-bottom:26px}
@@ -117,12 +117,12 @@ dialog::backdrop{background:#0009}
 .panowrap{position:relative;overflow:hidden}
 .cover{display:block;width:100%;height:clamp(220px,32vw,400px);object-fit:cover}
 .coverbar{position:absolute;right:max(5vw,16px);bottom:16px;display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
-.coverbar .edit.dark{background:#082f35d9;color:#fff}
+.coverbar .edit.dark{background:#081b35d9;color:#fff}
 .toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:12px 18px;border-radius:12px;font-size:15px;z-index:50;opacity:0;pointer-events:none;transition:opacity .3s}
 .toast.on{opacity:1}
 .meter i{width:var(--w)}
 .card,.btn,.chip{transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s,background .2s,color .2s}
-.card:not(.composer):hover{transform:translateY(-6px);box-shadow:0 18px 40px -18px #0e4a5266}
+.card:not(.composer):hover{transform:translateY(-6px);box-shadow:0 18px 40px -18px #0e2a5266}
 .btn:hover{transform:translateY(-2px)}
 .chip:hover{background:var(--brick);color:#fff;border-color:transparent}
 @media(max-width:600px){nav a{padding:8px 9px;font-size:14px}.route li+li::before{width:18px;margin:0 8px}}
@@ -168,18 +168,18 @@ dialog::backdrop{background:#0009}
   <div class="panowrap" id="panowrap">
   <svg class="pano" id="pano" viewBox="0 0 1200 380" preserveAspectRatio="xMidYMax slice" aria-label="Dusk over the Volga with the Kremlin walls on the hill and a small boat on the river">
     <defs>
-      <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0e4a52"/><stop offset=".6" stop-color="#1f6a6a"/><stop offset="1" stop-color="#f0a35a"/></linearGradient>
-      <linearGradient id="water" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a7a78"/><stop offset="1" stop-color="#082f35"/></linearGradient>
-      <linearGradient id="hill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#174f4a"/><stop offset="1" stop-color="#0b3532"/></linearGradient>
+      <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0e2a52"/><stop offset=".6" stop-color="#1f3e6a"/><stop offset="1" stop-color="#f0a35a"/></linearGradient>
+      <linearGradient id="water" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a4b7a"/><stop offset="1" stop-color="#081b35"/></linearGradient>
+      <linearGradient id="hill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#172e4f"/><stop offset="1" stop-color="#0b1c35"/></linearGradient>
       <linearGradient id="brick" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d2573c"/><stop offset="1" stop-color="#8f2f20"/></linearGradient>
-      <g id="tower"><rect x="-16" y="-70" width="32" height="70" fill="url(#brick)"/><rect x="6" y="-70" width="10" height="70" fill="#00000025"/><path d="M-20 -70 L0 -112 L20 -70Z" fill="#2c5a4c"/><path d="M0 -112 L20 -70 L8 -70Z" fill="#00000030"/><rect x="-5" y="-50" width="10" height="16" rx="5" fill="#2a120c"/><rect x="-18" y="-72" width="36" height="5" fill="#f2c3a8" opacity=".5"/></g>
+      <g id="tower"><rect x="-16" y="-70" width="32" height="70" fill="url(#brick)"/><rect x="6" y="-70" width="10" height="70" fill="#00000025"/><path d="M-20 -70 L0 -112 L20 -70Z" fill="#2c3f5a"/><path d="M0 -112 L20 -70 L8 -70Z" fill="#00000030"/><rect x="-5" y="-50" width="10" height="16" rx="5" fill="#2a120c"/><rect x="-18" y="-72" width="36" height="5" fill="#f2c3a8" opacity=".5"/></g>
       <pattern id="merlon" width="22" height="12" patternUnits="userSpaceOnUse"><path d="M2 12V2l5 5 5-5v10z" fill="#b8452d"/></pattern>
     </defs>
     <rect width="1200" height="380" fill="url(#sky)"/>
     <g class="cloud" fill="#ffffff" opacity=".12"><ellipse cx="200" cy="90" rx="110" ry="22"/><ellipse cx="260" cy="76" rx="60" ry="20"/><ellipse cx="700" cy="60" rx="90" ry="16"/></g>
     <circle class="glow" cx="930" cy="250" r="90" fill="#ffb547" opacity=".18"/><circle cx="930" cy="250" r="54" fill="#ffb547"/>
-    <g class="birds" fill="none" stroke="#0b2f33" stroke-width="2.5" stroke-linecap="round"><path d="M100 120q8-8 16 0q8-8 16 0"/><path d="M140 100q6-6 12 0q6-6 12 0"/><path d="M76 96q5-5 10 0q5-5 10 0"/></g>
-    <path d="M0 250 Q180 200 360 230 T760 215 T1200 235 V380 H0Z" fill="#1d5e5a" opacity=".6"/>
+    <g class="birds" fill="none" stroke="#0b1c33" stroke-width="2.5" stroke-linecap="round"><path d="M100 120q8-8 16 0q8-8 16 0"/><path d="M140 100q6-6 12 0q6-6 12 0"/><path d="M76 96q5-5 10 0q5-5 10 0"/></g>
+    <path d="M0 250 Q180 200 360 230 T760 215 T1200 235 V380 H0Z" fill="#1d385e" opacity=".6"/>
     <path d="M0 265 Q220 190 470 210 Q700 228 900 205 Q1060 190 1200 220 V300 H0Z" fill="url(#hill)"/>
     <g>
       <rect x="250" y="196" width="560" height="22" fill="url(#brick)"/>
@@ -264,7 +264,7 @@ dialog::backdrop{background:#0009}
 
 <footer class="band" id="contact"><div class="wrap">
   <h2>Let's talk</h2>
-  <p style="color:#bcd6d4;max-width:56ch">For study, projects or just to say hello — write to me.</p>
+  <p style="color:#bcc7d6;max-width:56ch">For study, projects or just to say hello — write to me.</p>
   <div class="row" style="margin-top:14px"><span class="mail" id="mail">rusabujjaman1@gmail.com</span><button class="btn sun" id="copyMail" type="button">Copy email</button></div>
   <p class="small" style="margin-top:40px">© 2026 Rusab Ujjaman Munim Hazra · Nizhny Novgorod, Russia</p>
 </div></footer>
