@@ -177,6 +177,14 @@ html[lang=bn] nav a{font-size:15px}
 .owner-link{background:none;border:0;color:inherit;font:inherit;cursor:pointer;text-decoration:underline;padding:0}
 #ownerDlg{background:#0c1530ee;border:1px solid var(--g-brd);box-shadow:var(--g-shadow);-webkit-backdrop-filter:var(--g-blur);backdrop-filter:var(--g-blur)}
 .lg-dlg{display:grid;gap:10px}
+
+/* follow */
+.follow-box{display:grid;gap:12px;margin-top:26px;padding:20px 22px;border-radius:24px;max-width:640px}
+.follow-box h3{font-size:20px}.follow-box .fsub{margin:6px 0 0;color:#c8d3ea}
+.follow-box input{flex:1;min-width:200px;font:16px Inter,"Hind Siliguri",sans-serif;padding:12px 16px;border-radius:999px;border:1px solid var(--g-brd);background:#ffffff12;color:#fff}
+.fcount-line{display:inline-block;margin-left:6px;padding:2px 10px;border-radius:999px;background:#ffb54726;color:#ffd58a;font-size:14px}
+.fcount:not(:empty){margin-left:6px;padding:1px 8px;border-radius:999px;background:#ffb547;color:#1d1606;font-size:13px}
+@media(prefers-reduced-motion:no-preference){.follow-cta .fcount:not(:empty){animation:glint 3s ease-in-out infinite}}
 /* ===== LIQUID GLASS (iOS style) ===== */
 @view-transition{navigation:auto}
 nav .wrap{view-transition-name:glassnav}.lg-bg{view-transition-name:glassbg}
@@ -294,7 +302,7 @@ footer{padding-top:20px}
     <div class="avwrap"><div class="avatar" id="avatar">RH<img src="../images/profile.jpg" alt="Русаб Уджаман Муним Хазра" onerror="this.remove()"></div></div>
     <h1>Русаб Уджаман<br>Муним Хазра</h1>
     <p>Студент-информатик Университета Лобачевского в Нижнем Новгороде. Родом из Пироджпура, Бангладеш. Люблю спортивное программирование, кибербезопасность и ИИ — и хочу помочь развитию IT-сферы Бангладеш.</p>
-    <div class="cta"><a class="btn sun" href="#cv">Моё резюме</a><a class="btn ghost" href="../cv/Rusab-Hazra-CV-ru.pdf" download>⬇ Скачать резюме</a><a class="btn ghost" href="#posts">Читать посты</a></div>
+    <div class="cta"><a class="btn sun" href="#cv">Моё резюме</a><a class="btn ghost" href="../cv/Rusab-Hazra-CV-ru.pdf" download>⬇ Скачать резюме</a><a class="btn ghost" href="#posts">Читать посты</a><a class="btn ghost follow-cta" href="#follow" id="followCta" hidden>🔔 Подписаться <span class="fcount" id="fc1"></span></a></div>
   </div>
   <div class="panowrap" id="panowrap">
   <svg class="pano" id="pano" viewBox="0 0 1200 380" preserveAspectRatio="xMidYMax slice" aria-label="Сумерки над Волгой: стены кремля на холме и небольшая лодка на реке">
@@ -415,6 +423,12 @@ footer{padding-top:20px}
   <h2>Давайте общаться</h2>
   <p style="color:#bcc7d6;max-width:56ch">По учёбе, проектам или просто чтобы поздороваться — пишите мне.</p>
   <div class="row" style="margin-top:14px"><span class="mail" id="mail">rusabujjaman1@gmail.com</span><button class="btn sun" id="copyMail" type="button">Скопировать e-mail</button></div>
+  <form class="lg-panel follow-box" id="follow" novalidate hidden>
+    <div><h3>Подпишитесь по e-mail</h3><p class="fsub">Новые посты и новости — прямо на вашу почту. <span class="fcount-line"><b id="fc2">0</b> подписчиков</span></p></div>
+    <div class="row"><input type="text" id="fEmail" inputmode="email" autocomplete="email" placeholder="you@example.com" aria-label="E-mail"><button class="btn sun" id="fBtn" type="submit">Подписаться</button></div>
+    <input type="text" id="fWeb" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;height:0;width:0;opacity:0">
+    <span class="msg" id="fMsg" role="status"></span>
+  </form>
   <div class="clinks">
     <a class="clink" href="tel:+79109764647"><svg viewBox="0 0 24 24" fill="#ffb547"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg><span><small>Мобильный</small><b>+7 910 976-46-47</b></span></a>
     <a class="clink" href="https://wa.me/79109764647" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="#25d366"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .2-3.2-.7-2.7-1.1-4.4-3.9-4.6-4.1-.1-.2-1.1-1.4-1.1-2.7s.7-2 .9-2.2c.3-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.6 2.1 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.1.1.6-.1 1.2z"/></svg><span><small>WhatsApp</small><b>+7 910 976-46-47 · @rusab1</b></span></a>
@@ -475,21 +489,23 @@ if(!reduce&&'IntersectionObserver' in window){
 <script type="module">
 const C=window.QA||{},L=document.documentElement.lang||'en',$=id=>document.getElementById(id);
 const S={
- en:{sending:"Posting…",up:"Uploading file… please wait",done:"Posted! Thank you.",need:"Please write your name and question.",big:"File is bigger than 20 MB.",type:"Only photos or MP4/WebM/MOV videos.",busy:"Many people are posting right now. Try again in a minute.",err:"Something went wrong. Please try again.",none:"No questions yet. Be the first to ask!",off:"Q&A is opening soon.",ans:"Rusab's answer",load:"Loading…"},
- bn:{sending:"পোস্ট হচ্ছে…",up:"ফাইল আপলোড হচ্ছে… একটু অপেক্ষা করুন",done:"পোস্ট হয়েছে! ধন্যবাদ।",need:"নাম আর প্রশ্ন লিখুন।",big:"ফাইল ২০ MB-এর বেশি।",type:"শুধু ছবি বা MP4/WebM/MOV ভিডিও।",busy:"এখন অনেকে পোস্ট করছে। এক মিনিট পর আবার চেষ্টা করুন।",err:"কিছু ভুল হয়েছে। আবার চেষ্টা করুন।",none:"এখনও কোনো প্রশ্ন নেই। প্রথম প্রশ্নটা আপনিই করুন!",off:"প্রশ্নোত্তর শিগগিরই চালু হবে।",ans:"রুসাবের উত্তর",load:"লোড হচ্ছে…"},
- ru:{sending:"Публикация…",up:"Загрузка файла… подождите",done:"Опубликовано! Спасибо.",need:"Напишите имя и вопрос.",big:"Файл больше 20 МБ.",type:"Только фото или видео MP4/WebM/MOV.",busy:"Сейчас много публикаций. Попробуйте через минуту.",err:"Что-то пошло не так. Попробуйте ещё раз.",none:"Вопросов пока нет. Спросите первым!",off:"Раздел вопросов скоро откроется.",ans:"Ответ Русаба",load:"Загрузка…"}
+ en:{follow:"Follow",fsent:"Almost done! Open your e-mail and press the confirm button.",falready:"You already follow me. Thank you!",femail:"Please write a correct e-mail.",fquota:"Too many sign-ups today. Please try tomorrow.",sending:"Posting…",up:"Uploading file… please wait",done:"Posted! Thank you.",need:"Please write your name and question.",big:"File is bigger than 20 MB.",type:"Only photos or MP4/WebM/MOV videos.",busy:"Many people are posting right now. Try again in a minute.",err:"Something went wrong. Please try again.",none:"No questions yet. Be the first to ask!",off:"Q&A is opening soon.",ans:"Rusab's answer",load:"Loading…"},
+ bn:{follow:"ফলো",fsent:"প্রায় শেষ! ইমেইল খুলে কনফার্ম বাটনে চাপুন।",falready:"আপনি আগেই ফলো করছেন। ধন্যবাদ!",femail:"সঠিক ইমেইল লিখুন।",fquota:"আজ অনেকে সাইন আপ করেছে। কাল চেষ্টা করুন।",sending:"পোস্ট হচ্ছে…",up:"ফাইল আপলোড হচ্ছে… একটু অপেক্ষা করুন",done:"পোস্ট হয়েছে! ধন্যবাদ।",need:"নাম আর প্রশ্ন লিখুন।",big:"ফাইল ২০ MB-এর বেশি।",type:"শুধু ছবি বা MP4/WebM/MOV ভিডিও।",busy:"এখন অনেকে পোস্ট করছে। এক মিনিট পর আবার চেষ্টা করুন।",err:"কিছু ভুল হয়েছে। আবার চেষ্টা করুন।",none:"এখনও কোনো প্রশ্ন নেই। প্রথম প্রশ্নটা আপনিই করুন!",off:"প্রশ্নোত্তর শিগগিরই চালু হবে।",ans:"রুসাবের উত্তর",load:"লোড হচ্ছে…"},
+ ru:{follow:"Подписаться",fsent:"Почти готово! Откройте почту и нажмите кнопку подтверждения.",falready:"Вы уже подписаны. Спасибо!",femail:"Введите правильный e-mail.",fquota:"Сегодня слишком много подписок. Попробуйте завтра.",sending:"Публикация…",up:"Загрузка файла… подождите",done:"Опубликовано! Спасибо.",need:"Напишите имя и вопрос.",big:"Файл больше 20 МБ.",type:"Только фото или видео MP4/WebM/MOV.",busy:"Сейчас много публикаций. Попробуйте через минуту.",err:"Что-то пошло не так. Попробуйте ещё раз.",none:"Вопросов пока нет. Спросите первым!",off:"Раздел вопросов скоро откроется.",ans:"Ответ Русаба",load:"Загрузка…"}
 }[L]||{};
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const fmt=t=>{const d=new Date(t);return isNaN(d)?'':d.toLocaleString(L==='en'?'en-GB':L,{day:'numeric',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit'})};
 const list=$('qaList'),form=$('qaForm'),msg=$('qaMsg'),send=$('qaSend');
 const ok=/^https:\/\/script\.google\.com\/macros\/s\/[\w-]+\/exec$/.test(C.script||'');
 if(/^https:\/\/docs\.google\.com\//.test(C.sheet||'')){$('ownerBtn').href=C.sheet;$('ownerBtn').hidden=false}
+else{const t=$('ownerBtn').nextSibling;if(t&&t.nodeType===3)t.textContent=t.textContent.replace(/^\s*·\s*/,'')}
 if(!ok){list.innerHTML=`<div class="empty">${esc(S.off)}</div>`;form.querySelectorAll('input,textarea,button').forEach(e=>e.disabled=true)}
 else{
 async function load(){
   try{
     const r=await fetch(C.script,{cache:'no-store'});const d=await r.json();
     if(!d.ok)throw 0;
+    if(typeof d.followers==='number')showF(d.followers);
     if(!d.items.length){list.innerHTML=`<div class="empty">${esc(S.none)}</div>`;return}
     list.innerHTML=d.items.map(q=>{
       const id=/^[\w-]{10,}$/.test(q.file)?q.file:'';
@@ -498,6 +514,18 @@ async function load(){
       return `<article class="card qa-item"><div class="who"><b>${esc(q.name)}</b><time>${esc(fmt(q.time))}</time></div><p class="q">${esc(q.q)}</p>${m}${a}</article>`}).join('');
   }catch(e){list.innerHTML=`<div class="empty">${esc(S.err)}</div>`}
 }
+
+const fbox=$('follow');
+function showF(n){fbox.hidden=false;$('followCta').hidden=false;$('fc2').textContent=n;$('fc1').textContent=n>0?n:''}
+fbox.addEventListener('submit',async e=>{
+  e.preventDefault();const fm=$('fMsg'),email=$('fEmail').value.trim();
+  if(!/^[^\s@<>"',;]+@[^\s@<>"',;]+\.[a-z]{2,}$/i.test(email)){fm.textContent=S.femail;return}
+  $('fBtn').disabled=true;fm.textContent=S.sending;
+  try{const r=await fetch(C.script,{method:'POST',body:JSON.stringify({action:'follow',email,hp:$('fWeb').value})});const d=await r.json();
+    fm.textContent=d.ok?(d.status==='already'?S.falready:S.fsent):(S['f'+d.err]||S[d.err]||S.err);if(d.ok)$('fEmail').value=''}
+  catch(err){fm.textContent=S.err}
+  $('fBtn').disabled=false;
+});
 const b64=f=>new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(String(r.result).split(',')[1]);r.onerror=rej;r.readAsDataURL(f)});
 form.addEventListener('submit',async e=>{
   e.preventDefault();
