@@ -161,6 +161,9 @@ html[lang=bn] nav a{font-size:15px}
 .langs a[aria-current]{background:var(--sun);color:#0b1220;opacity:1;font-weight:600}
 
 /* ===== LIQUID GLASS (iOS style) ===== */
+@view-transition{navigation:auto}
+nav .wrap{view-transition-name:glassnav}.lg-bg{view-transition-name:glassbg}
+::view-transition-old(root),::view-transition-new(root){animation-duration:.45s}
 :root{color-scheme:dark;--bg:#060b18;--ink:#eef3ff;--soft:#a9b6cf;--line:#ffffff22;--card:#ffffff0d;--brick:#ff8a6b;
 --g-bg:linear-gradient(135deg,#ffffff2b 0%,#ffffff0f 45%,#ffffff08 100%);
 --g-brd:#ffffff38;--g-blur:blur(26px) saturate(190%) brightness(1.08);
@@ -266,7 +269,7 @@ footer{padding-top:20px}
 <nav><div class="wrap">
   <b>Rusab<span>.</span></b>
   <a href="#about">Обо мне</a><a href="#cv">Резюме</a><a href="#posts">Посты</a><a href="#videos">Видео</a><a href="#contact">Контакты</a>
-  <span class="langs"><a href="/" hreflang="en" >EN</a><a href="/bn/" hreflang="bn">বাংলা</a><a href="/ru/" hreflang="ru" aria-current="page">RU</a></span>
+  <span class="langs"><a href="/?v=20261123b" hreflang="en" >EN</a><a href="/bn/?v=20261123b" hreflang="bn">বাংলা</a><a href="/ru/?v=20261123b" hreflang="ru" aria-current="page">RU</a></span>
 </div></nav>
 
 <header class="hero" id="about">
