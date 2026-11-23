@@ -41,7 +41,7 @@ def build(lang):
     h = h.replace(f'<meta property="og:url" content="{SITE}">', f'<meta property="og:url" content="{SITE}{lang}/">')
     h = h.replace('aria-current="page">EN<', '>EN<')
     h = h.replace(f'hreflang="{lang}">', f'hreflang="{lang}" aria-current="page">', 1)
-    h = re.sub(r'(src|href)="(images/|videos/|content\.js)', r'\1="../\2', h)
+    h = re.sub(r'(src|href)="(images/|videos/|content\.js|qa/)', r'\1="../\2', h)
     h = h.replace('href="cv/Rusab-Hazra-CV.pdf"', f'href="../cv/Rusab-Hazra-CV-{lang}.pdf"')
     h = h.replace('<script src="../content.js"></script>', '<script>window.BASE="../"</script>\n<script src="../content.js"></script>', 1)
 

@@ -85,7 +85,7 @@ T = {
 "Copy email": {"bn": "ইমেইল কপি করুন", "ru": "Скопировать e-mail"},
 "Mobile": {"bn": "মোবাইল", "ru": "Мобильный"},
 "Official (UNN)": {"bn": "অফিশিয়াল (ইউএনএন)", "ru": "Официальная (ННГУ)"},
-"© 2026 Rusab Ujjaman Munim Hazra · Nizhny Novgorod, Russia": {"bn": "© ২০২৬ রুসাব উজ্জামান মুনিম হাজরা · নিঝনি নভগোরোদ, রাশিয়া", "ru": "© 2026 Русаб Уджаман Муним Хазра · Нижний Новгород, Россия"},
+"· © 2026 Rusab Ujjaman Munim Hazra · Nizhny Novgorod, Russia": {"bn": "· © ২০২৬ রুসাব উজ্জামান মুনিম হাজরা · নিঝনি নভগোরোদ, রাশিয়া", "ru": "· © 2026 Русаб Уджаман Муним Хазра · Нижний Новгород, Россия"},
 # attributes / meta
 "Rusab Ujjaman Munim Hazra — Informatics student": {"bn": "রুসাব উজ্জামান মুনিম হাজরা (Rusab Ujjaman Munim Hazra) — ইনফরমেটিক্সের ছাত্র", "ru": "Русаб Уджаман Муним Хазра (Rusab Ujjaman Munim Hazra) — студент-информатик"},
 "Rusab Ujjaman Munim Hazra — Bangladeshi informatics student at Lobachevsky University, Nizhny Novgorod. CV, posts and videos about programming, cybersecurity and AI.": {
@@ -101,4 +101,16 @@ T = {
 "No videos yet.": {"bn": "এখনও কোনো ভিডিও নেই।", "ru": "Видео пока нет."},
 "Copied": {"bn": "কপি হয়েছে", "ru": "Скопировано"},
 "Select and copy": {"bn": "সিলেক্ট করে কপি করুন", "ru": "Выделите и скопируйте"},
+"Ask me anything": {"bn": "আমাকে প্রশ্ন করুন", "ru": "Задайте вопрос"},
+"Ask a question or leave a comment. You can add a photo or a short video. I reply here.": {"bn": "প্রশ্ন করুন বা মন্তব্য লিখুন। চাইলে ছবি বা ছোট ভিডিও দিতে পারেন। আমি এখানেই উত্তর দেব।", "ru": "Задайте вопрос или оставьте комментарий. Можно добавить фото или короткое видео. Я отвечу здесь."},
+"Your name": {"bn": "আপনার নাম", "ru": "Ваше имя"},
+"Question or comment": {"bn": "প্রশ্ন বা মন্তব্য", "ru": "Вопрос или комментарий"},
+"Photo or video (optional, up to 50 MB)": {"bn": "ছবি বা ভিডিও (ইচ্ছা হলে, ৫০ MB পর্যন্ত)", "ru": "Фото или видео (по желанию, до 50 МБ)"},
+"Post": {"bn": "পোস্ট করুন", "ru": "Опубликовать"},
+"Everything you post here is public.": {"bn": "এখানে যা পোস্ট করবেন, সবাই দেখতে পাবে।", "ru": "Всё, что вы публикуете здесь, видно всем."},
+"Q&A": {"bn": "প্রশ্নোত্তর", "ru": "Вопросы"},
+"Owner login": {"bn": "মালিকের লগইন", "ru": "Вход для владельца"},
+"Password": {"bn": "পাসওয়ার্ড", "ru": "Пароль"},
+"Log in": {"bn": "লগইন", "ru": "Войти"},
+"Cancel": {"bn": "বাতিল", "ru": "Отмена"},
 }
