@@ -20,6 +20,11 @@
     2) Ba choto MP4 video "videos" folder-e upload kore
        file: "videos/myclip.mp4" likho (GitHub-e 25 MB porjonto).
 
+  BANGLA AR RUSSIAN: website-er 3 ta version ache (EN, বাংলা, RU).
+  Post ba video-r onno bhasha dite chaile _bn ar _ru jog koro:
+    title_bn, text_bn, title_ru, text_ru  (video-te caption_bn, caption_ru)
+  Na dile oi bhasha-r page-e English lekha-i dekhabe.
+
   Protita block-er sheshe koma (,) dite bhulo na.
 */
 
@@ -28,6 +33,10 @@ window.POSTS = [
     title: "Hello from Nizhny Novgorod!",
     date: "2026-11-20",
     text: "This is my new personal website. Here I will share what I learn about programming, cybersecurity and AI, and about my student life in Russia.",
+    title_bn: "নিঝনি নভগোরোদ থেকে হ্যালো!",
+    text_bn: "এটা আমার নতুন ব্যক্তিগত ওয়েবসাইট। এখানে প্রোগ্রামিং, সাইবার সিকিউরিটি আর এআই নিয়ে যা শিখছি, আর রাশিয়ায় আমার ছাত্রজীবনের কথা শেয়ার করব।",
+    title_ru: "Привет из Нижнего Новгорода!",
+    text_ru: "Это мой новый личный сайт. Здесь я буду делиться тем, что узнаю о программировании, кибербезопасности и ИИ, и рассказывать о студенческой жизни в России.",
     image: ""
   },
 ];
