@@ -1,6 +1,6 @@
-// Supabase project for the Q&A section. These two values are public by design
-// (safe to publish); the database rules in qa/setup.sql protect the data.
+// Q&A backend: the Google Apps Script "Web app URL" (see qa/apps-script.gs).
+// sheet = link to your Google Sheet, opened by the "Owner" button (only you can edit it).
 window.QA = {
-  url: "",   // e.g. "https://abcdefgh.supabase.co"
-  key: ""    // the "anon public" / "publishable" key
+  script: "",   // e.g. "https://script.google.com/macros/s/AKfy.../exec"
+  sheet: ""     // e.g. "https://docs.google.com/spreadsheets/d/..../edit"
 };

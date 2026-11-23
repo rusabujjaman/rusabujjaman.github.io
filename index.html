@@ -403,7 +403,7 @@ footer{padding-top:20px}
     <label for="qaBody">Question or comment</label>
     <textarea id="qaBody" maxlength="2000" required></textarea>
     <input type="text" id="qaWeb" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;height:0;width:0;opacity:0">
-    <label for="qaFile">Photo or video (optional, up to 50 MB)</label>
+    <label for="qaFile">Photo or video (optional, up to 20 MB)</label>
     <input type="file" id="qaFile" accept="image/*,video/mp4,video/webm,video/quicktime">
     <div class="row"><button class="btn sun" type="submit" id="qaSend">Post</button><span class="msg" id="qaMsg" role="status"></span></div>
     <p class="small" style="margin:0">Everything you post here is public.</p>
@@ -421,17 +421,10 @@ footer{padding-top:20px}
   <a class="clink" href="https://t.me/rusabujjaman" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="#29a9eb"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.6 6.8-1.6 7.7c-.1.5-.4.7-.9.4l-2.5-1.8-1.2 1.2c-.1.1-.3.2-.5.2l.2-2.6 4.7-4.3c.2-.2 0-.3-.3-.1L8.7 13.1l-2.5-.8c-.5-.2-.5-.5.1-.8l9.7-3.7c.5-.2.8.1.6 1z"/></svg><span><small>Telegram</small><b>+7 910 976-46-47 · @rusabujjaman</b></span></a>
     <a class="clink" href="mailto:s26380581@unn.ru"><svg viewBox="0 0 24 24" fill="#7fb2ff"><path d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3zM5 13.2v4L12 21l7-3.8v-4L12 17l-7-3.8z"/></svg><span><small>Official (UNN)</small><b>s26380581@unn.ru</b></span></a>
   </div>
-  <p class="small" style="margin-top:40px"><button class="owner-link" id="ownerBtn" type="button">Owner login</button> · © 2026 Rusab Ujjaman Munim Hazra · Nizhny Novgorod, Russia</p>
+  <p class="small" style="margin-top:40px"><a class="owner-link" id="ownerBtn" target="_blank" rel="noopener" hidden>Owner login</a> · © 2026 Rusab Ujjaman Munim Hazra · Nizhny Novgorod, Russia</p>
 </div></footer>
 
 
-
-<dialog id="ownerDlg"><form method="dialog" id="ownerForm" class="lg-dlg">
-  <h3>Owner login</h3>
-  <label for="ownerEmail">E-mail</label><input type="text" id="ownerEmail" autocomplete="username" inputmode="email">
-  <label for="ownerPass">Password</label><input type="password" id="ownerPass" autocomplete="current-password" style="width:100%;font:16px Inter,sans-serif;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--ink)">
-  <div class="row"><button class="btn sun" id="ownerGo" value="go">Log in</button><button class="btn ghost" value="cancel" formnovalidate>Cancel</button><span class="msg" id="ownerMsg"></span></div>
-</form></dialog>
 
 <script src="content.js"></script>
 <script>
@@ -481,69 +474,51 @@ if(!reduce&&'IntersectionObserver' in window){
 <script type="module">
 const C=window.QA||{},L=document.documentElement.lang||'en',$=id=>document.getElementById(id);
 const S={
- en:{sending:"Posting…",up:"Uploading file…",done:"Posted! Thank you.",need:"Please write your name and question.",big:"File is bigger than 50 MB.",type:"Only photos or MP4/WebM/MOV videos.",err:"Something went wrong. Please try again.",none:"No questions yet. Be the first to ask!",off:"Q&A is opening soon.",ans:"Rusab's answer",reply:"Write an answer…",save:"Save answer",hide:"Hide",show:"Show",del:"Delete",sure:"Delete this question for good?",bad:"Wrong e-mail or password.",out:"Log out",login:"Owner login",hidden:"(hidden)"},
- bn:{sending:"পোস্ট হচ্ছে…",up:"ফাইল আপলোড হচ্ছে…",done:"পোস্ট হয়েছে! ধন্যবাদ।",need:"নাম আর প্রশ্ন লিখুন।",big:"ফাইল ৫০ MB-এর বেশি।",type:"শুধু ছবি বা MP4/WebM/MOV ভিডিও।",err:"কিছু ভুল হয়েছে। আবার চেষ্টা করুন।",none:"এখনও কোনো প্রশ্ন নেই। প্রথম প্রশ্নটা আপনিই করুন!",off:"প্রশ্নোত্তর শিগগিরই চালু হবে।",ans:"রুসাবের উত্তর",reply:"উত্তর লিখুন…",save:"উত্তর সেভ করুন",hide:"লুকান",show:"দেখান",del:"মুছুন",sure:"প্রশ্নটি একেবারে মুছে ফেলবেন?",bad:"ইমেইল বা পাসওয়ার্ড ভুল।",out:"লগ আউট",login:"মালিকের লগইন",hidden:"(লুকানো)"},
- ru:{sending:"Публикация…",up:"Загрузка файла…",done:"Опубликовано! Спасибо.",need:"Напишите имя и вопрос.",big:"Файл больше 50 МБ.",type:"Только фото или видео MP4/WebM/MOV.",err:"Что-то пошло не так. Попробуйте ещё раз.",none:"Вопросов пока нет. Спросите первым!",off:"Раздел вопросов скоро откроется.",ans:"Ответ Русаба",reply:"Напишите ответ…",save:"Сохранить ответ",hide:"Скрыть",show:"Показать",del:"Удалить",sure:"Удалить этот вопрос навсегда?",bad:"Неверный e-mail или пароль.",out:"Выйти",login:"Вход для владельца",hidden:"(скрыто)"}
+ en:{sending:"Posting…",up:"Uploading file… please wait",done:"Posted! Thank you.",need:"Please write your name and question.",big:"File is bigger than 20 MB.",type:"Only photos or MP4/WebM/MOV videos.",busy:"Many people are posting right now. Try again in a minute.",err:"Something went wrong. Please try again.",none:"No questions yet. Be the first to ask!",off:"Q&A is opening soon.",ans:"Rusab's answer",load:"Loading…"},
+ bn:{sending:"পোস্ট হচ্ছে…",up:"ফাইল আপলোড হচ্ছে… একটু অপেক্ষা করুন",done:"পোস্ট হয়েছে! ধন্যবাদ।",need:"নাম আর প্রশ্ন লিখুন।",big:"ফাইল ২০ MB-এর বেশি।",type:"শুধু ছবি বা MP4/WebM/MOV ভিডিও।",busy:"এখন অনেকে পোস্ট করছে। এক মিনিট পর আবার চেষ্টা করুন।",err:"কিছু ভুল হয়েছে। আবার চেষ্টা করুন।",none:"এখনও কোনো প্রশ্ন নেই। প্রথম প্রশ্নটা আপনিই করুন!",off:"প্রশ্নোত্তর শিগগিরই চালু হবে।",ans:"রুসাবের উত্তর",load:"লোড হচ্ছে…"},
+ ru:{sending:"Публикация…",up:"Загрузка файла… подождите",done:"Опубликовано! Спасибо.",need:"Напишите имя и вопрос.",big:"Файл больше 20 МБ.",type:"Только фото или видео MP4/WebM/MOV.",busy:"Сейчас много публикаций. Попробуйте через минуту.",err:"Что-то пошло не так. Попробуйте ещё раз.",none:"Вопросов пока нет. Спросите первым!",off:"Раздел вопросов скоро откроется.",ans:"Ответ Русаба",load:"Загрузка…"}
 }[L]||{};
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const fmt=t=>new Date(t).toLocaleString(L==='en'?'en-GB':L,{day:'numeric',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit'});
-const list=$('qaList'),form=$('qaForm'),msg=$('qaMsg');
-if(!C.url||!C.key){list.innerHTML=`<div class="empty">${esc(S.off)}</div>`;form.querySelectorAll('input,textarea,button').forEach(e=>e.disabled=true);$('ownerBtn').hidden=true}
+const fmt=t=>{const d=new Date(t);return isNaN(d)?'':d.toLocaleString(L==='en'?'en-GB':L,{day:'numeric',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit'})};
+const list=$('qaList'),form=$('qaForm'),msg=$('qaMsg'),send=$('qaSend');
+const ok=/^https:\/\/script\.google\.com\/macros\/s\/[\w-]+\/exec$/.test(C.script||'');
+if(/^https:\/\/docs\.google\.com\//.test(C.sheet||'')){$('ownerBtn').href=C.sheet;$('ownerBtn').hidden=false}
+if(!ok){list.innerHTML=`<div class="empty">${esc(S.off)}</div>`;form.querySelectorAll('input,textarea,button').forEach(e=>e.disabled=true)}
 else{
-const {createClient}=await import('https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm');
-const sb=createClient(C.url,C.key);
-const OWNER='rusabujjaman1@gmail.com';let owner=false;
-const pub=p=>`${C.url}/storage/v1/object/public/uploads/${p}`;
 async function load(){
-  const {data,error}=await sb.from('questions').select('*').order('created_at',{ascending:false}).limit(200);
-  if(error){list.innerHTML=`<div class="empty">${esc(S.err)}</div>`;return}
-  if(!data.length){list.innerHTML=`<div class="empty">${esc(S.none)}</div>`;return}
-  list.innerHTML=data.map(q=>{
-    const m=q.media_path?(q.media_type==='video'?`<video controls preload="metadata" playsinline src="${esc(pub(q.media_path))}"></video>`:`<img loading="lazy" alt="" src="${esc(pub(q.media_path))}">`):'';
-    const a=q.answer?`<div class="qa-ans"><small>${esc(S.ans)}</small><p>${esc(q.answer)}</p></div>`:'';
-    const ad=owner?`<div class="qa-admin" data-id="${q.id}" data-path="${esc(q.media_path||'')}"><textarea placeholder="${esc(S.reply)}">${esc(q.answer||'')}</textarea><div class="row"><button class="btn sun" data-a="save">${esc(S.save)}</button><button class="btn ghost" data-a="${q.hidden?'show':'hide'}">${esc(q.hidden?S.show:S.hide)}</button><button class="btn ghost" data-a="del">${esc(S.del)}</button></div></div>`:'';
-    return `<article class="card qa-item${q.hidden?' qa-hidden':''}"><div class="who"><b>${esc(q.name)}</b><time>${fmt(q.created_at)}</time>${q.hidden?`<small>${esc(S.hidden)}</small>`:''}</div><p class="q">${esc(q.body)}</p>${m}${a}${ad}</article>`}).join('');
+  try{
+    const r=await fetch(C.script,{cache:'no-store'});const d=await r.json();
+    if(!d.ok)throw 0;
+    if(!d.items.length){list.innerHTML=`<div class="empty">${esc(S.none)}</div>`;return}
+    list.innerHTML=d.items.map(q=>{
+      const id=/^[\w-]{10,}$/.test(q.file)?q.file:'';
+      const m=!id?'':q.type==='video'?`<iframe src="https://drive.google.com/file/d/${id}/preview" allow="autoplay; fullscreen" allowfullscreen loading="lazy" style="width:100%;aspect-ratio:16/9;border:0;border-radius:16px;margin-top:12px;background:#0006"></iframe>`:`<a href="https://drive.google.com/file/d/${id}/view" target="_blank" rel="noopener"><img loading="lazy" alt="" src="https://drive.google.com/thumbnail?id=${id}&sz=w1200"></a>`;
+      const a=q.a?`<div class="qa-ans"><small>${esc(S.ans)}</small><p>${esc(q.a)}</p></div>`:'';
+      return `<article class="card qa-item"><div class="who"><b>${esc(q.name)}</b><time>${esc(fmt(q.time))}</time></div><p class="q">${esc(q.q)}</p>${m}${a}</article>`}).join('');
+  }catch(e){list.innerHTML=`<div class="empty">${esc(S.err)}</div>`}
 }
+const b64=f=>new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(String(r.result).split(',')[1]);r.onerror=rej;r.readAsDataURL(f)});
 form.addEventListener('submit',async e=>{
   e.preventDefault();
-  const name=$('qaName').value.trim(),body=$('qaBody').value.trim(),f=$('qaFile').files[0];
-  if($('qaWeb').value){form.reset();msg.textContent=S.done;return}
-  if(!name||!body){msg.textContent=S.need;return}
-  let media_path=null,media_type=null;
+  const name=$('qaName').value.trim(),q=$('qaBody').value.trim(),f=$('qaFile').files[0];
+  if(!name||!q){msg.textContent=S.need;return}
+  let file=null;
   if(f){
-    if(f.size>52428800){msg.textContent=S.big;return}
-    const isV=/^video\/(mp4|webm|quicktime)$/.test(f.type),isI=/^image\//.test(f.type);
-    if(!isV&&!isI){msg.textContent=S.type;return}
-    const ext=((f.name.split('.').pop()||'').toLowerCase().replace(/[^a-z0-9]/g,'')||(isV?'mp4':'jpg')).slice(0,5);
-    media_path=`q/${crypto.randomUUID()}.${ext.length>=2?ext:(isV?'mp4':'jpg')}`;media_type=isV?'video':'image';
-    $('qaSend').disabled=true;msg.textContent=S.up;
-    const up=await sb.storage.from('uploads').upload(media_path,f,{contentType:f.type,upsert:false});
-    if(up.error){$('qaSend').disabled=false;msg.textContent=S.err;return}
+    if(f.size>20*1024*1024){msg.textContent=S.big;return}
+    const mime=f.type||(/\.mov$/i.test(f.name)?'video/quicktime':'');
+    if(!/^video\/(mp4|webm|quicktime)$/.test(mime)&&!/^image\/(jpeg|png|webp|gif|heic|heif)$/.test(mime)){msg.textContent=S.type;return}
+    send.disabled=true;msg.textContent=S.up;
+    file={mime,data:await b64(f)};
   }
-  $('qaSend').disabled=true;msg.textContent=S.sending;
-  const {error}=await sb.from('questions').insert({name,body,media_path,media_type});
-  $('qaSend').disabled=false;
-  if(error){msg.textContent=/Too many/.test(error.message)?error.message:S.err;return}
-  form.reset();msg.textContent=S.done;load();
+  send.disabled=true;if(!f)msg.textContent=S.sending;
+  try{
+    const r=await fetch(C.script,{method:'POST',body:JSON.stringify({name,q,file,hp:$('qaWeb').value})});
+    const d=await r.json();
+    if(!d.ok){msg.textContent=S[d.err]||S.err}else{form.reset();msg.textContent=S.done;load()}
+  }catch(err){msg.textContent=S.err}
+  send.disabled=false;
 });
-list.addEventListener('click',async e=>{
-  const b=e.target.closest('button[data-a]');if(!b||!owner)return;
-  const box=b.closest('.qa-admin'),id=box.dataset.id,a=b.dataset.a;b.disabled=true;
-  if(a==='save'){const t=box.querySelector('textarea').value.trim();await sb.from('questions').update({answer:t||null,answered_at:t?new Date().toISOString():null}).eq('id',id)}
-  if(a==='hide'||a==='show')await sb.from('questions').update({hidden:a==='hide'}).eq('id',id);
-  if(a==='del'){if(!confirm(S.sure)){b.disabled=false;return}if(box.dataset.path)await sb.storage.from('uploads').remove([box.dataset.path]);await sb.from('questions').delete().eq('id',id)}
-  load();
-});
-const dlg=$('ownerDlg'),btn=$('ownerBtn');
-async function who(){const {data}=await sb.auth.getSession();owner=data.session?.user?.email===OWNER;btn.textContent=owner?S.out:S.login;load()}
-btn.onclick=async()=>{if(owner){await sb.auth.signOut();who()}else{$('ownerMsg').textContent='';dlg.showModal()}};
-$('ownerForm').addEventListener('submit',async e=>{
-  if(e.submitter?.value!=='go')return;e.preventDefault();
-  const {error}=await sb.auth.signInWithPassword({email:$('ownerEmail').value.trim(),password:$('ownerPass').value});
-  if(error){$('ownerMsg').textContent=S.bad;return}
-  $('ownerPass').value='';dlg.close();who();
-});
-who();
+list.innerHTML=`<div class="empty">${esc(S.load)}</div>`;load();
 }
 </script>
 </body>

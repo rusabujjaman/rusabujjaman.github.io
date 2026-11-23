@@ -12,6 +12,6 @@
   (pages) and `python3 i18n/build_cv.py` (CV PDFs).
 
 ## Q&A (public questions, photos, videos)
-- Backend: Supabase. Run `qa/setup.sql` once in the Supabase SQL Editor.
-- Put the project URL and anon/publishable key in `qa/config.js`.
-- Only rusabujjaman1@gmail.com (owner login in the footer) can answer, hide or delete.
+- Backend: a Google Sheet + Google Drive through Google Apps Script (`qa/apps-script.gs`).
+- Put the Web app URL and the Sheet link in `qa/config.js`.
+- Answer by typing in the Sheet's "answer" column; write "yes" in "hidden" to hide a post.
